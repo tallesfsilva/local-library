@@ -1,0 +1,33 @@
+extends layout
+
+
+
+block content
+  h1 #{title}
+ 
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Genre:
+      input#name.form-control(type='text', placeholder='Fantasy, Poetry etc.' name='name' value=(undefined===genre ? '' : genre.name))
+    
+    if errors 
+        ul(style="padding-left:0px;")
+            for error in errors
+               div#error-container(data-show="true" class="error-msg")
+                 li!= error.msg  
+    
+    button.btn.btn-primary(type='submit') Submit
+  script.
+    const animator = document.getElementById("error-container");
+    if(animator.dataset.show=="true"){    
+                  
+        setTimeout(function(event){  
+           event.preventDefault();  
+            animator.style.display = "none";
+            animator.style.animationName = "error-msg-out"; 
+            animator.style.transistion="ease-in";
+            animator.dataset.show="false";
+            
+      },3000)  
+    }
+   

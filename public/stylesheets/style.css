@@ -1,0 +1,48 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+
+
+
+
+@keyframes error-show {
+  from {display: none; opacity: 0}
+  to {display: block; opacity: 1}
+
+ }
+
+
+ @keyframes error-msg-out {
+  from {display: block; opacity: 1}
+  to {display: none; opacity: -1}
+
+ }
+
+
+.error-msg{
+
+background-color: #f8d7da;
+list-style: none;
+text-align: center;
+height: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 10px;
+font-weight: bolder;
+animation-name: error-show;
+animation-duration: 0.6s;
+transition: ease-out;
+}
